@@ -13,7 +13,6 @@ const main = () => {
     if (str !== "") {
       const gameNumber = identificator;
       let sets = str.split(';');
-      let flag = true;
 
       const maxCountColors = {
         maxRed: 0,
@@ -25,16 +24,11 @@ const main = () => {
         //found max count color in set
         if (colorsCount.red > maxCountColors.maxRed) maxCountColors.maxRed = colorsCount.red;
         if (colorsCount.green > maxCountColors.maxGreen) maxCountColors.maxGreen = colorsCount.green;
-        if (colorsCount.blue > maxCountColors.maxBlue) maxCountColors.maxBlue = colorsCount.blue;
-
+        if (colorsCount.blue > maxCountColors.maxBlue) maxCountColors.maxBlue = colorsCount.blue;        
         
-        if (!chekTrueGame(colorsCount, red, green, blue)) {
-          flag = false;
-        }
       })
-      if (flag){
-        sumGame += Number(gameNumber);
-      }
+      sumGame += Number(maxCountColors.maxRed*maxCountColors.maxGreen*maxCountColors.maxBlue);
+      
     }
   });
   console.log(sumGame);
