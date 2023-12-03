@@ -6,8 +6,9 @@ const main = () => {
   for (let i = 0; i < data.length; i++) {
     for (let j = 0; j < data[i].length; j++) {
       let current = data[i][j];
-      let hasSymbol = false;
+      let hasSymbol = false; // around not have symbol
       let temp = "";
+      //build number
       while (!isNaN(current)) {
         if (!hasSymbol) {
           hasSymbol = checkSymbolAround(data, i, j);
