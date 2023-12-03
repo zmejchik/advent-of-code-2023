@@ -12,23 +12,26 @@ const main = () => {
     console.log(str);
     if (str !== "") {
       const gameNumber = identificator;
-      let sets = str.split(';');
+      let sets = str.split(";");
 
       const maxCountColors = {
         maxRed: 0,
         maxGreen: 0,
-        maxBlue: 0,          
-      };     
-      sets.forEach((str)=>{           
+        maxBlue: 0,
+      };
+      sets.forEach((str) => {
         const colorsCount = countColors(str);
         //found max count color in set
-        if (colorsCount.red > maxCountColors.maxRed) maxCountColors.maxRed = colorsCount.red;
-        if (colorsCount.green > maxCountColors.maxGreen) maxCountColors.maxGreen = colorsCount.green;
-        if (colorsCount.blue > maxCountColors.maxBlue) maxCountColors.maxBlue = colorsCount.blue;        
-        
-      })
-      sumGame += Number(maxCountColors.maxRed*maxCountColors.maxGreen*maxCountColors.maxBlue);
-      
+        if (colorsCount.red > maxCountColors.maxRed)
+          maxCountColors.maxRed = colorsCount.red;
+        if (colorsCount.green > maxCountColors.maxGreen)
+          maxCountColors.maxGreen = colorsCount.green;
+        if (colorsCount.blue > maxCountColors.maxBlue)
+          maxCountColors.maxBlue = colorsCount.blue;
+      });
+      sumGame += Number(
+        maxCountColors.maxRed * maxCountColors.maxGreen * maxCountColors.maxBlue
+      );
     }
   });
   console.log(sumGame);
